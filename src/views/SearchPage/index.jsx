@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import { withApollo, ApolloConsumer } from "react-apollo";
 import gql from "graphql-tag";
 
-import PersonList from "./components/PersonList";
+import PersonList from '../../components/PersonList';
 
 const GET_PERSON_LIST = gql`query ($PersonFilter: String!) {
   allPersons(filter: { name_contains: $PersonFilter }) {
@@ -72,7 +72,12 @@ class SearchPage extends Component {
             </form>
             <br />
             {isLoading && <p>Loading...</p>}
-            {personList && !isLoading && <PersonList persons={personList} />}
+            {personList && !isLoading && (
+              <Fragment>
+                <h2>Here are results:</h2>
+                <PersonList persons={personList} />
+              </Fragment>
+            )}
             {personList &&
               !isLoading &&
               personList.length === 0 && <p>Nothing found :(</p>}

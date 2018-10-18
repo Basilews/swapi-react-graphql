@@ -13,6 +13,7 @@ import personList from "./reducers/personList";
 import Header from "./views/Header";
 import SearchPage from "./views/SearchPage";
 import PersonDetail from "./views/PersonDetail";
+import HistoryPage from "./views/HistoryPage";
 
 const store = createStore(personList);
 
@@ -33,6 +34,7 @@ function App() {
             <Switch>
               <Route exact path="/" component={SearchPage} />
               <Route exact path="/person/:id" component={PersonDetail} />
+              <Route exact path="/history" component={HistoryPage} />
             </Switch>
           </div>
         </BrowserRouter>
