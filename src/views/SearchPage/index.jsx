@@ -53,6 +53,7 @@ class SearchPage extends Component {
 
   render() {
     const { personList, isLoading } = this.state;
+    console.log(personList);
 
     return (
       <ApolloConsumer>
@@ -74,11 +75,8 @@ class SearchPage extends Component {
             </form>
             <br />
             {isLoading && <p>Loading...</p>}
-            {personList &&
-              !isLoading &&
-              personList.length === 0 && <p>Nothing found :(</p>
-            }
-            {personList && !isLoading && (
+            {personList && !isLoading && personList.length === 0 && <p>Nothing found :(</p>}
+            {personList && personList.length > 0 && !isLoading && (
               <Fragment>
                 <h2>Here are results:</h2>
                 <PersonList persons={personList} />
