@@ -28,7 +28,7 @@ function App() {
   return (
     <ApolloProvider client={apolloClient}>
       <ReduxProvider store={store}>
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
           <div className="App">
             <Header />
             <div className="Content">
