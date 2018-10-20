@@ -10,7 +10,6 @@ const checkIfExists = (person, state) => {
 }
 
 export default function personList(state = initialState, action) {
-  console.log(action);
   switch (action.type) {
     case PERSON_LIST_ADD_PERSON:
       const newList = checkIfExists(action.person, state)

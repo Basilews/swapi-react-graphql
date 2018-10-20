@@ -1,6 +1,8 @@
 import React from "react";
 import { Redirect } from "react-router";
 
+import PlayedWithPersonList from '../../components/PlayedWithPersonList';
+
 const PersonDetail = props => {
   if (props.location && props.location.state) {
     const { person } = props.location.state;
@@ -8,9 +10,10 @@ const PersonDetail = props => {
     return (
       <div>
         <h2>{person.name}</h2>
-        <p>birth year: {person.birthYear}</p>
-        <p>gender: {person.gender}</p>
-        <p>height: {person.height}</p>
+        {person.birthYear && <p>birth year: {person.birthYear}</p>}
+        {person.gender && <p>gender: {person.gender}</p>}
+        {person.height && <p>height: {person.height}</p>}
+        <PlayedWithPersonList person={person} />
       </div>
     );
   } else return <Redirect to="/" />;

@@ -11,9 +11,22 @@ const GET_PERSON_LIST = gql`query ($PersonFilter: String!) {
     birthYear
     gender
     height
-    species(filter: { name: "Human" }) {
-      id
+    species(filter: {name: "Human"}) {
       name
+    }
+    films(orderBy: episodeId_ASC) {
+      id
+      episodeId
+      characters {
+        id
+        name
+        species(filter: {name:"Human"}) {
+          name
+        }
+        films {
+          id
+        }
+      }
     }
   }
 }`;
@@ -30,8 +43,8 @@ class SearchPage extends Component {
     this.searchInput = React.createRef();
   }
 
-  onPersonsFetched = ({ allPersons }) => {
-    this.setState({ personList: allPersons, isLoading: false });
+  onPersonsFetched = (personList) => {
+    this.setState({ personList, isLoading: false });
   };
 
   onSubmit = async (client, event) => {
@@ -46,7 +59,10 @@ class SearchPage extends Component {
         PersonFilter: this.searchInput.current.value
       }
     });
-    this.onPersonsFetched(data);
+
+    const personList = data.allPersons.filter(person => person.species.length > 0)
+
+    this.onPersonsFetched(personList);
   };
 
   render() {
@@ -63,7 +79,7 @@ class SearchPage extends Component {
                 placeholder="Max Mustermann"
                 ref={this.searchInput}
                 required
-                // autoFocus
+                autoFocus
               />
               <br />
               <button onClick={event => this.onSubmit(client, event)}>
@@ -72,15 +88,16 @@ class SearchPage extends Component {
             </form>
             <br />
             {isLoading && <p>Loading...</p>}
+            {personList &&
+              !isLoading &&
+              personList.length === 0 && <p>Nothing found :(</p>
+            }
             {personList && !isLoading && (
               <Fragment>
                 <h2>Here are results:</h2>
                 <PersonList persons={personList} />
               </Fragment>
             )}
-            {personList &&
-              !isLoading &&
-              personList.length === 0 && <p>Nothing found :(</p>}
           </Fragment>
         )}
       </ApolloConsumer>
