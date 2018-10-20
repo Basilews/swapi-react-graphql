@@ -4,6 +4,7 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
 import * as PersonListActions from "../../actions/PersonListActions";
+import './styles.css';
 
 class PersonList extends React.Component {
   render() {
@@ -13,7 +14,7 @@ class PersonList extends React.Component {
     return (
       <ul>
         {persons.map(person => (
-          <li key={person.id}>
+          <li key={person.id} className="person">
             <Link
               to={{
                 pathname: `/person/${person.id}`,

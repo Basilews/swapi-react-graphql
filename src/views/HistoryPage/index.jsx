@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import PersonList from '../../components/PersonList';
 
@@ -16,7 +17,14 @@ class HistoryPage extends  Component {
                <PersonList persons={viewedPersonList} />
             </Fragment>
           )
-          : <h2>You hadn't seen anybody yet.</h2>
+          : (
+            <Fragment>
+              <h2>You hadn't seen anybody yet.</h2>
+              <Link to="/">
+                <p>Get back to search page</p>
+              </Link>
+            </Fragment>
+          )
         }
       </div>
     )

@@ -29,13 +29,15 @@ function App() {
     <ApolloProvider client={apolloClient}>
       <ReduxProvider store={store}>
         <BrowserRouter>
-          <div>
+          <div className="App">
             <Header />
-            <Switch>
-              <Route exact path="/" component={SearchPage} />
-              <Route exact path="/person/:id" render={routeProps => <PersonDetail {...routeProps} client={apolloClient} />} />
-              <Route exact path="/history" component={HistoryPage} />
-            </Switch>
+            <div className="Content">
+              <Switch>
+                <Route exact path="/" component={SearchPage} />
+                <Route exact path="/person/:id" render={routeProps => <PersonDetail {...routeProps} client={apolloClient} />} />
+                <Route exact path="/history" component={HistoryPage} />
+              </Switch>
+            </div>
           </div>
         </BrowserRouter>
       </ReduxProvider>

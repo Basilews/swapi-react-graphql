@@ -3,6 +3,7 @@ import { withApollo, ApolloConsumer } from "react-apollo";
 import gql from "graphql-tag";
 
 import PersonList from '../../components/PersonList';
+import "./styles.css";
 
 const GET_PERSON_LIST = gql`query ($PersonFilter: String!) {
   allPersons(filter: {name_contains: $PersonFilter }) {
@@ -23,7 +24,7 @@ class SearchPage extends Component {
 
     this.state = {
       personList: null,
-      isLoading: false
+      isLoading: false,
     };
 
     this.searchInput = React.createRef();
@@ -69,7 +70,7 @@ class SearchPage extends Component {
               />
               <br />
               <button onClick={event => this.onSubmit(client, event)}>
-                search
+                Search
               </button>
             </form>
             <br />

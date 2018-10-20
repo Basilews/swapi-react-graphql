@@ -1,0 +1,27 @@
+.header {
+  display: inline-flex;
+  border-bottom: 1px solid black;
+  padding-bottom: 8px;
+}
+
+.route {
+  margin: 0 8px;
+}
+
+.route:first-child {
+  margin-left: 0;
+}
+
+.route:last-child {
+  margin-right: 0;
+}
+
+.route a {
+  font-weight: 600;
+  text-decoration: none;
+  color: #2a2ade;
+}
+
+.route.isActive a {
+  color: #e82b2b;
+}

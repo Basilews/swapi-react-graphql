@@ -1,15 +1,30 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { withRouter } from 'react-router-dom';
+import classNames from 'classnames';
 
-const Header = () => (
-  <div>
-    <div>
-      <Link to="/">Search</Link>
-    </div>
-    <div>
-      <Link to="/history/">History</Link>
-    </div>
-  </div>
-);
+import routes from './constants';
 
-export default Header;
+import './styles.css';
+
+class Header extends Component {
+  render () {
+    const { pathname } = this.props.location;
+
+    return (
+      <header className="header">
+        {routes.map(route => {
+          const isActive = pathname === route.path;
+
+          return (
+            <div key={route.key} className={classNames('route', { isActive })}>
+              <Link to={route.path}>{route.name}</Link>
+            </div>
+          )}
+        )}
+      </header>
+    )
+  }
+};
+
+export default withRouter(Header);
