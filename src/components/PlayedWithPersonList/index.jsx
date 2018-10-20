@@ -2,6 +2,8 @@ import React from "react";
 
 import PersonList from '../../components/PersonList';
 
+// Step 2:
+// filter exclude inconsistent films
 const filterBySequnce = (films) => {
   let newArray = [];
   films.forEach((film, index, films) => {
@@ -13,14 +15,16 @@ const filterBySequnce = (films) => {
   return newArray;
 }
 
+// custom Array.prototpye.includes() method
 const checkArrayIncludesFilm = (films, episode) => {
   for (let film of films) {
     if (film.id === episode.id) return true;
   }
-
   return false;
 }
 
+// Step 3:
+// filter characters in films
 const filterByHumans = (personId, films) => {
   let characterList = [];
 
@@ -41,6 +45,8 @@ const filterByHumans = (personId, films) => {
   return characterList;
 };
 
+// Step 1:
+// filter exclude inconsistent films & exclude persons with only one film
 const filterFilms = (personId, films) => {
   const filteredFilms = filterBySequnce(films);
   if (films.length < 2 || !filteredFilms.length) return false;

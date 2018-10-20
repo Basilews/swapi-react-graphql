@@ -43,6 +43,7 @@ class PersonDetail extends Component {
   componentDidUpdate(prevProps) {
     const { id: prevPersonId } = prevProps.location.state.person;
     const { id: currentPersonId } =  this.props.location.state.person;
+
     if (prevPersonId !== currentPersonId) {
       this.setState({ films: [] });
       this.fetchFilms(this.props.location.state.person, this.props.client);
