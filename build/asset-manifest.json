@@ -1,14 +1,14 @@
 {
-  "main.css": "/static/css/main.11ca2fb7.chunk.css",
-  "main.js": "/static/js/main.c29f590c.chunk.js",
-  "main.js.map": "/static/js/main.c29f590c.chunk.js.map",
-  "static/js/1.646066b8.chunk.js": "/static/js/1.646066b8.chunk.js",
-  "static/js/1.646066b8.chunk.js.map": "/static/js/1.646066b8.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.229c360f.js",
-  "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
-  "static/media/tuple.mjs": "/static/media/tuple.068936d7.mjs",
-  "static/css/main.11ca2fb7.chunk.css.map": "/static/css/main.11ca2fb7.chunk.css.map",
-  "index.html": "/index.html",
-  "precache-manifest.4d7a1d1df4a87f16030102961ed503ce.js": "/precache-manifest.4d7a1d1df4a87f16030102961ed503ce.js",
-  "service-worker.js": "/service-worker.js"
+  "main.css": "/swapi-react-graphql/static/css/main.3662ec42.chunk.css",
+  "main.js": "/swapi-react-graphql/static/js/main.164afad0.chunk.js",
+  "main.js.map": "/swapi-react-graphql/static/js/main.164afad0.chunk.js.map",
+  "static/js/1.999a39ac.chunk.js": "/swapi-react-graphql/static/js/1.999a39ac.chunk.js",
+  "static/js/1.999a39ac.chunk.js.map": "/swapi-react-graphql/static/js/1.999a39ac.chunk.js.map",
+  "runtime~main.js": "/swapi-react-graphql/static/js/runtime~main.5bc4b94d.js",
+  "runtime~main.js.map": "/swapi-react-graphql/static/js/runtime~main.5bc4b94d.js.map",
+  "static/media/tuple.mjs": "/swapi-react-graphql/static/media/tuple.068936d7.mjs",
+  "static/css/main.3662ec42.chunk.css.map": "/swapi-react-graphql/static/css/main.3662ec42.chunk.css.map",
+  "index.html": "/swapi-react-graphql/index.html",
+  "precache-manifest.df252c6a9b303094e03d3b80b9b3010f.js": "/swapi-react-graphql/precache-manifest.df252c6a9b303094e03d3b80b9b3010f.js",
+  "service-worker.js": "/swapi-react-graphql/service-worker.js"
 }
