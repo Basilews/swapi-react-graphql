@@ -4,7 +4,7 @@
   "description": "",
   "keywords": [],
   "homepage": "http://basilews.github.io/swapi-react-graphql/",
-  "main": "src/index.js",
+  "main": "src/index.js"
   "dependencies": {
     "apollo-cache-inmemory": "1.3.5",
     "apollo-client": "2.4.2",
