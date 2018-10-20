@@ -63,7 +63,7 @@ class SearchPage extends Component {
             <form>
               <input
                 type="text"
-                placeholder="Max Mustermann"
+                placeholder="Luke Skywalker"
                 ref={this.searchInput}
                 required
                 autoFocus
