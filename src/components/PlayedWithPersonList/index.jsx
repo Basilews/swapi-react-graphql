@@ -17,34 +17,40 @@ const checkArrayIncludesFilm = (films, episode) => {
   for (let film of films) {
     if (film.id === episode.id) return true;
   }
+
   return false;
 }
 
-const filterByHumans = (films) => {
+const filterByHumans = (personId, films) => {
   let characterList = [];
 
   films.forEach((film, index) => {
     if (!index) return;
+
     film.characters.forEach(character => {
       if (!character.species.length) return;
 
-      if (checkArrayIncludesFilm(character.films, film) && checkArrayIncludesFilm(character.films, films[index - 1])) {
-        characterList.push(character);
+      if (checkArrayIncludesFilm(character.films, film)
+        && checkArrayIncludesFilm(character.films, films[index - 1])
+        && character.id !== personId) {
+        if (!characterList.includes(character)) characterList.push(character);
       }
     })
   })
+
   return characterList;
 };
 
-const filterFilms = (films) => {
+const filterFilms = (personId, films) => {
   const filteredFilms = filterBySequnce(films);
   if (films.length < 2 || !filteredFilms.length) return false;
-    else return filterByHumans(filteredFilms);
+    else return filterByHumans(personId, filteredFilms);
 }
 
 const PlayedWithPersonList = ({ person }) => {
-  const personList = filterFilms(person.films);
-  console.log(personList);
+  if (!person.films) return null;
+
+  const personList = filterFilms(person.id, person.films);
 
   if (personList && personList.length > 0) {
     return (
@@ -54,9 +60,7 @@ const PlayedWithPersonList = ({ person }) => {
       </div>
     );
   }
-  else {
-    return null;
-  }
+  else return null;
 };
 
 export default PlayedWithPersonList;

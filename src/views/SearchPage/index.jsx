@@ -5,7 +5,7 @@ import gql from "graphql-tag";
 import PersonList from '../../components/PersonList';
 
 const GET_PERSON_LIST = gql`query ($PersonFilter: String!) {
-  allPersons(filter: { name_contains: $PersonFilter }) {
+  allPersons(filter: {name_contains: $PersonFilter }) {
     id
     name
     birthYear
@@ -13,20 +13,6 @@ const GET_PERSON_LIST = gql`query ($PersonFilter: String!) {
     height
     species(filter: {name: "Human"}) {
       name
-    }
-    films(orderBy: episodeId_ASC) {
-      id
-      episodeId
-      characters {
-        id
-        name
-        species(filter: {name:"Human"}) {
-          name
-        }
-        films {
-          id
-        }
-      }
     }
   }
 }`;
@@ -56,11 +42,11 @@ class SearchPage extends Component {
     const { data } = await client.query({
       query: GET_PERSON_LIST,
       variables: {
-        PersonFilter: this.searchInput.current.value
+        PersonFilter: this.searchInput.current.value,
       }
     });
 
-    const personList = data.allPersons.filter(person => person.species.length > 0)
+    const personList = data.allPersons.filter(person => person.species.length > 0);
 
     this.onPersonsFetched(personList);
   };

@@ -33,7 +33,7 @@ function App() {
             <Header />
             <Switch>
               <Route exact path="/" component={SearchPage} />
-              <Route exact path="/person/:id" component={PersonDetail} />
+              <Route exact path="/person/:id" render={routeProps => <PersonDetail {...routeProps} client={apolloClient} />} />
               <Route exact path="/history" component={HistoryPage} />
             </Switch>
           </div>
