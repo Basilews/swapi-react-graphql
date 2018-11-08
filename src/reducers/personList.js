@@ -12,9 +12,11 @@ const checkIfExists = (person, state) => {
 export default function personList(state = initialState, action) {
   switch (action.type) {
     case PERSON_LIST_ADD_PERSON:
-      const newList = checkIfExists(action.person, state)
-        ? null
-        : state.viewedPersonList.push(action.person);
+      let newList;
+      if (!checkIfExists(action.person, state)) {
+        newList = state.viewedPersonList;
+        newList.push(action.person);
+      }
       return {
         ...state,
         ...newList
