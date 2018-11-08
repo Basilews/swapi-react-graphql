@@ -1,7 +1,7 @@
 {
   "main.css": "/swapi-react-graphql/static/css/main.dc87d807.chunk.css",
-  "main.js": "/swapi-react-graphql/static/js/main.5b243494.chunk.js",
-  "main.js.map": "/swapi-react-graphql/static/js/main.5b243494.chunk.js.map",
+  "main.js": "/swapi-react-graphql/static/js/main.9ca89095.chunk.js",
+  "main.js.map": "/swapi-react-graphql/static/js/main.9ca89095.chunk.js.map",
   "static/js/1.999a39ac.chunk.js": "/swapi-react-graphql/static/js/1.999a39ac.chunk.js",
   "static/js/1.999a39ac.chunk.js.map": "/swapi-react-graphql/static/js/1.999a39ac.chunk.js.map",
   "runtime~main.js": "/swapi-react-graphql/static/js/runtime~main.5bc4b94d.js",
@@ -9,6 +9,6 @@
   "static/media/tuple.mjs": "/swapi-react-graphql/static/media/tuple.068936d7.mjs",
   "static/css/main.dc87d807.chunk.css.map": "/swapi-react-graphql/static/css/main.dc87d807.chunk.css.map",
   "index.html": "/swapi-react-graphql/index.html",
-  "precache-manifest.03d0f20ca06ff29ccd0c8ec8bee6a090.js": "/swapi-react-graphql/precache-manifest.03d0f20ca06ff29ccd0c8ec8bee6a090.js",
+  "precache-manifest.a91f97f72c220ea7398042c7f237e000.js": "/swapi-react-graphql/precache-manifest.a91f97f72c220ea7398042c7f237e000.js",
   "service-worker.js": "/swapi-react-graphql/service-worker.js"
 }
