@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/swapi-react-graphql/static/css/main.dc87d807.chunk.css"
   },
   {
-    "revision": "6a6cb2546824e2ab10531d1767d7990c",
+    "revision": "3f7ca1143267db09577ed1496b8ffa65",
     "url": "/swapi-react-graphql/index.html"
   }
 ];
