@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/swapi-react-graphql/precache-manifest.6f7da7bcb2391dd54662dd3a5a1daf02.js"
+  "/swapi-react-graphql/precache-manifest.c41c23640a0d24a9c508be89c4aed9fd.js"
 );
 
 workbox.clientsClaim();
