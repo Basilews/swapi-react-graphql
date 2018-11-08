@@ -53,7 +53,6 @@ class SearchPage extends Component {
 
   render() {
     const { personList, isLoading } = this.state;
-    console.log(personList);
 
     return (
       <ApolloConsumer>
