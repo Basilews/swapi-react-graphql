@@ -5,4 +5,4 @@ Check in History page which persons did you already see.
 
 **Demo page**: https://basilews.github.io/swapi-react-graphql/
 
-![image of project](./build/static/img)
+![image of project](./build/static/img/screenshot.png)
